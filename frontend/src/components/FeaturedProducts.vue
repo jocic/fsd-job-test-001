@@ -1,7 +1,7 @@
 <template>
   
   <v-row>
-    <v-col cols="4" v-for="(product, index) in products" :index="index">
+    <v-col :cols="colWidth" v-for="(product, index) in products" :index="index">
       <v-card class="product text-center my-3 mx-3 pa-6" elevated="2">
         <v-card-title class="title mb-3">
           {{ product.title }}
@@ -10,7 +10,7 @@
           {{ product.tagline }}
         </v-card-text>
         <div class="thumb mb-3">
-          <img :src="product.img_cover" :alt="product.title" height="200" />
+          <img :src="product.img_cover" :alt="product.title"/>
         </div>
         <div class="price mb-3">
           ${{ product.variants[0].price }}
@@ -34,6 +34,13 @@
       font-size: 2rem;
     }
     
+    .thumb > img {
+      width: auto;
+      max-width: 80%;
+      height: auto;
+      max-height: 200px;
+    }
+    
     .price {
       background: #111;
       color: #fff;
@@ -46,6 +53,24 @@
 <script>
   
   export default {
+    
+    computed: {
+      
+      colWidth() {
+        
+        const { md, sm, xs } = this.$vuetify.display;
+        
+        if (md) {
+          return 6;
+        }
+        
+        if (sm || xs) {
+          return 12;
+        }
+        
+        return 4;
+      }
+    },
     
     data: () => ({
       
