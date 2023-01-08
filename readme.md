@@ -4,6 +4,8 @@ This is a test project for the Full-Stack Developer job opening that I've recent
 
 Backend part of the project is built using Laravel and provides administrators with a way to manage products sold on their E-Shop. Second part of the project, Frontend part, consists from a basic E-Shop that lists currently active products and all that good stuff.
 
+**Note:** Each defined product must have at-least single variant in order to be displayed and sold on a fictive E-Shop, that variant is considered to be the "main" one.
+
 ## LAMP Stack Setup
 
 On Ubuntu 22.04.1, or one of it's variants, stack can be easily setup by executing the following. 
@@ -37,9 +39,9 @@ Configure the following parameters:
 *  **DB_PASSWORD** - 1234567890
 
 ```bash
-cp www/.env.example www/.env
+cp backend/.env.example backend/.env
 
-nano www/.env
+nano backend/.env
 ```
 
 ### Step 3 - Install Dependencies & Setup Admin Section
@@ -67,7 +69,22 @@ php artisan serve
 
 Frontend part of the project needs to be setup in a similar fashion.
 
-### Step 1 - Configure 
+### Step 1 - Configure Vue
+
+Configure the following parameters:
+*  **API_ENDPOINT** - http://127.0.0.1:8000
+
+```bash
+nano frontend/.env
+```
+
+### Step 2 - Test
+
+Test if everything is working properly.
+
+```bash
+yarn dev
+```
 
 ## Contact
 

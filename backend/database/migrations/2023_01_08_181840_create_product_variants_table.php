@@ -20,10 +20,10 @@ return new class extends Migration
             $table->string('img_cover', 500)->default('');
             $table->text('description')->nullable();
             $table->double('price');
-            $table->unsignedBigInteger('parent_id');
+            $table->unsignedBigInteger('product_id');
             $table->timestamps();
             
-            $table->foreign('parent_id')->references('id')->on('products')
+            $table->foreign('product_id')->references('id')->on('products')
                 ->onUpdate('cascade')->onDelete('cascade');
         });
     }

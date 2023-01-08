@@ -616,7 +616,7 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($variantDataType, 'parent_id');
+        $dataRow = $this->dataRow($variantDataType, 'product_id');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'number',
@@ -646,7 +646,7 @@ class DataRowsTableSeeder extends Seeder
                     'model'       => 'App\\Models\\Product',
                     'table'       => 'products',
                     'type'        => 'belongsTo',
-                    'column'      => 'parent_id',
+                    'column'      => 'product_id',
                     'key'         => 'id',
                     'label'       => 'title',
                     'pivot_table' => 'data_rows',

@@ -45,7 +45,7 @@ class ProductSeeder extends Seeder
             $variant->img_cover   = asset('/storage/product-variants/dummy-1-v1.png');
             $variant->description = 'Lorem ipsum sit dolorem, remedium remedire remedium...';
             $variant->price       = 100.0;
-            $variant->parent_id   = $product->id;
+            $variant->product_id  = $product->id;
             
             $variant->save();
             
@@ -59,7 +59,7 @@ class ProductSeeder extends Seeder
             $variant->img_cover   = asset('/storage/product-variants/dummy-1-v2.png');
             $variant->description = 'Lorem ipsum sit dolorem, remedium remedire remedium...';
             $variant->price       = 110.0;
-            $variant->parent_id   = $product->id;
+            $variant->product_id  = $product->id;
             
             $variant->save();
             
@@ -73,7 +73,7 @@ class ProductSeeder extends Seeder
             $variant->img_cover   = asset('/storage/product-variants/dummy-1-v3.png');
             $variant->description = 'Lorem ipsum sit dolorem, remedium remedire remedium...';
             $variant->price       = 120.0;
-            $variant->parent_id   = $product->id;
+            $variant->product_id  = $product->id;
             
             $variant->save();
         }
@@ -104,7 +104,7 @@ class ProductSeeder extends Seeder
             $variant->img_cover   = asset('/storage/product-variants/dummy-2-v1.png');
             $variant->description = 'Lorem ipsum sit dolorem, remedium remedire remedium...';
             $variant->price       = 200.0;
-            $variant->parent_id   = $product->id;
+            $variant->product_id  = $product->id;
             
             $variant->save();
         }
@@ -135,7 +135,7 @@ class ProductSeeder extends Seeder
             $variant->img_cover   = asset('/storage/product-variants/dummy-3-v1.png');
             $variant->description = 'Lorem ipsum sit dolorem, remedium remedire remedium...';
             $variant->price       = 50.0;
-            $variant->parent_id   = $product->id;
+            $variant->product_id  = $product->id;
             
             $variant->save();
         }
@@ -166,7 +166,7 @@ class ProductSeeder extends Seeder
             $variant->img_cover   = asset('/storage/product-variants/dummy-4-v1.png');
             $variant->description = 'Lorem ipsum sit dolorem, remedium remedire remedium...';
             $variant->price       = 140.0;
-            $variant->parent_id   = $product->id;
+            $variant->product_id  = $product->id;
             
             $variant->save();
             
@@ -180,7 +180,7 @@ class ProductSeeder extends Seeder
             $variant->img_cover   = asset('/storage/product-variants/dummy-4-v2.png');
             $variant->description = 'Lorem ipsum sit dolorem, remedium remedire remedium...';
             $variant->price       = 160.0;
-            $variant->parent_id   = $product->id;
+            $variant->product_id  = $product->id;
             
             $variant->save();
             
@@ -194,7 +194,7 @@ class ProductSeeder extends Seeder
             $variant->img_cover   = asset('/storage/product-variants/dummy-4-v3.png');
             $variant->description = 'Lorem ipsum sit dolorem, remedium remedire remedium...';
             $variant->price       = 125.0;
-            $variant->parent_id   = $product->id;
+            $variant->product_id  = $product->id;
             
             $variant->save();
         }
@@ -225,7 +225,7 @@ class ProductSeeder extends Seeder
             $variant->img_cover   = asset('/storage/product-variants/dummy-5-v1.png');
             $variant->description = 'Lorem ipsum sit dolorem, remedium remedire remedium...';
             $variant->price       = 250.0;
-            $variant->parent_id   = $product->id;
+            $variant->product_id  = $product->id;
             
             $variant->save();
         }
@@ -256,7 +256,7 @@ class ProductSeeder extends Seeder
             $variant->img_cover   = asset('/storage/product-variants/dummy-6-v1.png');
             $variant->description = 'Lorem ipsum sit dolorem, remedium remedire remedium...';
             $variant->price       = 150.0;
-            $variant->parent_id   = $product->id;
+            $variant->product_id  = $product->id;
             
             $variant->save();
         }
