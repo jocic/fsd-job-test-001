@@ -16,13 +16,17 @@
           ${{ product.variants[0].price }}
         </div>
         <div class="to-card">
-          <v-btn color="blue-darken-4" size="large" block>
+          <v-btn color="blue-darken-4" size="large" block @click="add(product)">
             Add to Card
           </v-btn>
         </div>
       </v-card>
     </v-col>
   </v-row>
+  
+  <v-snackbar color="blue-darken-3" rounded="pill" v-model="added">
+    <div class="text-center">Product added to your card.</div>
+  </v-snackbar>
   
 </template>
 
@@ -74,8 +78,32 @@
     
     data: () => ({
       
+      added: false,
+      
       products: [],
+      
     }),
+    
+    methods: {
+      
+      add(product) {
+        
+        this.added = true;
+        
+        if (typeof localStorage.cart == 'undefined' || localStorage.cart.length == 0) {
+          localStorage.cart = '[]';
+        }
+        
+        if (product.variants.length > 0) {
+          
+          let data = JSON.parse(localStorage.cart);
+          
+          data.push(product.variants[0]);
+          
+          localStorage.cart = JSON.stringify(data);
+        }
+      }
+    },
     
     mounted() {
       
