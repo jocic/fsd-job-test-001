@@ -1,6 +1,6 @@
 # Test Project (Laravel + Vue)
 
-This is a test project for the Full-Stack Developer position that I've recentlly applied to.
+This is a test project for the Full-Stack Developer job opening that I've recentlly applied to.
 
 Backend part of the project is built using Laravel and provides administrators with a way to manage products sold on their E-Shop. Second part of the project, Frontend part, consists from a basic E-Shop that lists currently active products and all that good stuff.
 
@@ -12,7 +12,7 @@ On Ubuntu 22.04.1, or one of it's variants, stack can be easily setup by executi
 apt-get install apache2 mysql-server php php-xml php-dom php-curl php-mysql php-gd -y
 ```
 
-## Project Setup
+## Backend Setup
 
 After the stack has been sucessfully setup, following steps must be taken to setup the Web API project.
 
@@ -48,7 +48,8 @@ Finally, you need to install required dependencies and setup Voyager.
 
 ```bash
 composer install
-php artisan voyager:install
+php artisan db:seed VoyagerDatabaseSeeder
+php artisan db:seed VoyagerDummyDatabaseSeeder
 php artisan voyager:admin --create
 ```
 
@@ -59,6 +60,14 @@ Test if everything is working properly.
 ```bash
 php artisan serve
 ```
+
+**Dashboard:** {APP_URL}/admin
+
+## Frontend Setup
+
+Frontend part of the project needs to be setup in a similar fashion.
+
+### Step 1 - Configure 
 
 ## Contact
 
