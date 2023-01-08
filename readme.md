@@ -8,8 +8,8 @@ Backend part of the project is built using Laravel and provides administrators w
 
 On Ubuntu 22.04.1, or one of it's variants, stack can be easily setup by executing the following. 
 
-```sh
-apt-get install apache2 mysql-server php php-xml php-dom php-curl php-mysql -y
+```bash
+apt-get install apache2 mysql-server php php-xml php-dom php-curl php-mysql php-gd -y
 ```
 
 ## Project Setup
@@ -31,10 +31,10 @@ GRANT ALL PRIVILEGES ON `project`.* TO `admin`;
 ### Step 2 - Configure Laravel
 
 Configure the following parameters:
-*  APP_URL - (leave as is for development)
-*  DB_DATABASE - project
-*  DB_USERNAME - admin
-*  DB_PASSWORD - 1234567890
+*  **APP_URL** - http://127.0.0.1:8000
+*  **DB_DATABASE** - project
+*  **DB_USERNAME** - admin
+*  **DB_PASSWORD** - 1234567890
 
 ```bash
 cp www/.env.example www/.env

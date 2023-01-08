@@ -54,6 +54,34 @@ class DataTypesTableSeeder extends Seeder
                 'description'           => '',
             ])->save();
         }
+
+        $dataType = $this->dataType('slug', 'products');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'products',
+                'display_name_singular' => __('voyager::seeders.data_types.product.singular'),
+                'display_name_plural'   => __('voyager::seeders.data_types.product.plural'),
+                'icon'                  => 'voyager-diamond',
+                'model_name'            => 'App\\Models\\Product',
+                'controller'            => '',
+                'generate_permissions'  => 1,
+                'description'           => '',
+            ])->save();
+        }
+
+        $dataType = $this->dataType('slug', 'product-variants');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'product_variants',
+                'display_name_singular' => __('voyager::seeders.data_types.product_variant.singular'),
+                'display_name_plural'   => __('voyager::seeders.data_types.product_variant.plural'),
+                'icon'                  => 'voyager-plus',
+                'model_name'            => 'App\\Models\\ProductVariant',
+                'controller'            => '',
+                'generate_permissions'  => 1,
+                'description'           => '',
+            ])->save();
+        }
     }
 
     /**

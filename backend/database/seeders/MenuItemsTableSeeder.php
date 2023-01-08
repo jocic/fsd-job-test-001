@@ -65,6 +65,54 @@ class MenuItemsTableSeeder extends Seeder
             ])->save();
         }
 
+        $productsMenuItem = MenuItem::firstOrNew([
+            'menu_id' => $menu->id,
+            'title'   => __('voyager::seeders.menu_items.products'),
+            'url'     => '',
+            'route'   => '',
+        ]);
+        if (!$productsMenuItem->exists) {
+            $productsMenuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-basket',
+                'color'      => null,
+                'parent_id'  => null,
+                'order'      => 4,
+            ])->save();
+        }
+        
+        $menuItem = MenuItem::firstOrNew([
+            'menu_id' => $menu->id,
+            'title'   => __('voyager::seeders.menu_items.products'),
+            'url'     => '',
+            'route'   => 'voyager.products.index',
+        ]);
+        if (!$menuItem->exists) {
+            $menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-diamond',
+                'color'      => null,
+                'parent_id'  => $productsMenuItem->id,
+                'order'      => 1,
+            ])->save();
+        }
+        
+        $menuItem = MenuItem::firstOrNew([
+            'menu_id' => $menu->id,
+            'title'   => __('voyager::seeders.menu_items.variants'),
+            'url'     => '',
+            'route'   => 'voyager.product-variants.index',
+        ]);
+        if (!$menuItem->exists) {
+            $menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'voyager-plus',
+                'color'      => null,
+                'parent_id'  => $productsMenuItem->id,
+                'order'      => 1,
+            ])->save();
+        }
+        
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
             'title'   => __('voyager::seeders.menu_items.roles'),
