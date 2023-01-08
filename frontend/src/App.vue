@@ -2,6 +2,9 @@
   <router-view />
 </template>
 
-<script setup>
-  //
-</script>
+<style lang="scss">
+  
+  .v-application.v-theme--light {
+    background: #f8f8f8;
+  }
+</style>

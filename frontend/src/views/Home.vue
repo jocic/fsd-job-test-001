@@ -1,29 +1,11 @@
 <template>
-  
+  <v-container>
+    <h1 class="text-center text-h3 mb-3">Featured Products</h1>
+    <v-divider class="mb-3" />
+    <featured-products />
+  </v-container>
 </template>
 
 <script setup>
-  import HelloWorld from '@/components/HelloWorld.vue'
-</script>
-
-<script>
-  
-  export default {
-    
-    mounted() {
-      
-      this.axios.get('/api/products').then((response) => {
-        
-        
-      })
-      .catch((error) => {
-        
-        
-      })
-      .then(() => {
-        
-        
-      });
-    }
-  }
+  import FeaturedProducts from '@/components/FeaturedProducts.vue'
 </script>
