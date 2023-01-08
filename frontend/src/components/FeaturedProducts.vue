@@ -88,7 +88,11 @@
       
       add(product) {
         
+        // Show Notification
+        
         this.added = true;
+        
+        // Push Data To Local Storage
         
         if (typeof localStorage.cart == 'undefined' || localStorage.cart.length == 0) {
           localStorage.cart = '[]';
@@ -102,7 +106,11 @@
           
           localStorage.cart = JSON.stringify(data);
         }
-      }
+        
+        // Dispatch Event
+        
+        window.dispatchEvent(new CustomEvent('item-added'));
+      },
     },
     
     mounted() {
@@ -110,16 +118,7 @@
       let that = this;
       
       this.axios.get('/api/products').then((response) => {
-        
         that.products = response.data;
-      })
-      .catch((error) => {
-        
-        
-      })
-      .then(() => {
-        
-        
       });
     }
   }
