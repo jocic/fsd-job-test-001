@@ -391,7 +391,7 @@ class DataRowsTableSeeder extends Seeder
                 'type'         => 'image',
                 'display_name' => __('voyager::seeders.data_rows.img_cover'),
                 'required'     => 1,
-                'browse'       => 0,
+                'browse'       => 1,
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
@@ -543,6 +543,116 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => 1,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($variantDataType, 'img_cover');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'image',
+                'display_name' => __('voyager::seeders.data_rows.img_cover'),
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => [
+                    'resize' => [
+                        'width'  => '1000',
+                        'height' => 'null',
+                    ],
+                    'quality'    => '70%',
+                    'upsize'     => true,
+                    'thumbnails' => [
+                        [
+                            'name'  => 'medium',
+                            'scale' => '50%',
+                        ],
+                        [
+                            'name'  => 'small',
+                            'scale' => '25%',
+                        ],
+                        [
+                            'name' => 'cropped',
+                            'crop' => [
+                                'width'  => '300',
+                                'height' => '250',
+                            ],
+                        ],
+                    ],
+                ],
+                'order' => 3,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($variantDataType, 'description');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'rich_text_box',
+                'display_name' => __('voyager::seeders.data_rows.description'),
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 5,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($variantDataType, 'price');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'number',
+                'display_name' => __('voyager::seeders.data_rows.price'),
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 5,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($variantDataType, 'parent_id');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'number',
+                'display_name' => __('voyager::seeders.data_rows.parent'),
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 5,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($variantDataType, 'product_variant_belongsto_product_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('voyager::seeders.data_rows.parent_product'),
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => [
+                    'model'       => 'App\\Models\\Product',
+                    'table'       => 'products',
+                    'type'        => 'belongsTo',
+                    'column'      => 'parent_id',
+                    'key'         => 'id',
+                    'label'       => 'title',
+                    'pivot_table' => 'data_rows',
+                    'pivot'       => 0,
+                ],
+                'order' => 5,
             ])->save();
         }
 

@@ -30,10 +30,15 @@ return [
     ],
     
     'data_rows' => [
-        'active'    => 'Active',
-        'slug'      => 'Slug',
-        'img_cover' => 'Cover',
-        'tagline'   => 'Tagline',
+        'active'         => 'Active',
+        'slug'           => 'Slug',
+        'img_cover'      => 'Cover',
+        'tagline'        => 'Tagline',
+        'description'    => 'Description',
+        'price'          => 'Price',
+        'product'        => 'Product',
+        'parent'         => 'Parent',
+        'parent_product' => 'Parent Product',
     ],
     
 ];

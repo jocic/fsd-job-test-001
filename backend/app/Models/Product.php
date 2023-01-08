@@ -12,4 +12,9 @@ class Product extends Model
     protected $fillable = [
         'title', 'img_cover', 'slug', 'tagline', 'status'
     ];
+    
+    public function variants() {
+        
+        return $this->hasMany(ProductVariant::class);
+    }
 }
